@@ -4,10 +4,10 @@ import ChannelList from '../containers/channel_list';
 
 const App = (props) => {
   return (
-    <div>
-        <ChannelList selectedChannel={props.match.params.channel} />
-        <MessageList selectedChannel={props.match.params.channel} />
-        </div>
+    <div className="chat-wrapper">
+      <ChannelList selectedChannel={props.match.params.channel} />
+      <MessageList selectedChannel={props.match.params.channel} />
+    </div>
   );
 };
 
