@@ -8,15 +8,19 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import App from './components/app';
 import messagesReducer from './reducers/messages_reducer';
+import identityReducer from './reducers/identity_reducer';
 
 const chatContainer = document.getElementById('chat_app');
+const currentUser = JSON.parse(chatContainer.dataset.currentUser);
 const initialState = {
   messages: [],
-  channels: [ 'Main', 'Berlin', 'Lolex' ],
+  currentUser: currentUser,
+  channels: ["Main", "Berlin", "Lolex"]
 };
 
 const reducers = combineReducers({
   messages: messagesReducer,
+  currentUser: identityReducer,
   channels: (state = null, action) => state
 });
 
