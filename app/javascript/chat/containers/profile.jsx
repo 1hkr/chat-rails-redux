@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { signOut } from '../actions';
 
+
 class Profile extends Component {
 
   constructor(props) {
@@ -17,20 +18,31 @@ class Profile extends Component {
     }));
   }
 
+  handleClick = () => {
+    this.props.signOut()
+  }
+
+// onClick= {() => this.props.signOut()}>
 
   render(){
   const profile = this.state.isToggleOn ? (
-    <p
-    onClick= {() => this.props.signOut()}>
-      Log out
-    </p>
+    <div>
+      <div className="messaging-logo-container shadow">
+        <img className="messaging-logo" src={this.props.currentUser.image} alt="logo" />
+      </div>
+      <div className="log-out-container">
+        <h6 className="rotate log-out slider" onClick= {this.handleClick}>Log out</h6>
+      </div>
+    </div>
     ) : (
-    <img className="messaging-logo" src={this.props.currentUser.image} alt="logo" />
+    <div className="messaging-logo-container shadow">
+      <img className="messaging-logo" src={this.props.currentUser.image} alt="logo" />
+    </div>
     );
 
     return (
       <div className="logo-container hidden-xs">
-        <div className="messaging-logo-container shadow" onClick={this.handleChange}>
+        <div onClick={this.handleChange}>
           {profile}
         </div>
       </div>
