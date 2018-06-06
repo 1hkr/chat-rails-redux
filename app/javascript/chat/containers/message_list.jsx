@@ -10,9 +10,9 @@ class MessageList extends Component {
     this.props.fetchMessages(this.props.selectedChannel);
   }
 
-  componentDidMount() {
-    this.refresher = setInterval(this.fetchMessages, 1000);
-  }
+  // componentDidMount() {
+  //   this.refresher = setInterval(this.fetchMessages, 1000);
+  // }
 
   componentDidUpdate() {
     this.list.scrollTop = this.list.scrollHeight;

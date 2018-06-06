@@ -11,6 +11,11 @@ export function fetchMessages(channel) {
   };
 }
 
+export function signOut() {
+  const promise = fetch('/users/sign_out', { method: 'DELETE', credentials: 'same-origin' })
+    .then(response => response.json());
+}
+
 // action to send a message
 export function createMessage(channel, content) {
   const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;

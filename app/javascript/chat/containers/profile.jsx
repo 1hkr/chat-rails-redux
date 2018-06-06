@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { signOut } from '../actions';
 
 class Profile extends Component {
 
@@ -18,7 +20,11 @@ class Profile extends Component {
 
   render(){
   const profile = this.state.isToggleOn ? (
-    <h6>Log out</h6>) : (
+    <p
+    onClick= {() => this.props.signOut()}>
+      Log out
+    </p>
+    ) : (
     <img className="messaging-logo" src={this.props.currentUser.image} alt="logo" />
     );
 
@@ -32,10 +38,14 @@ class Profile extends Component {
   };
 }
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ signOut }, dispatch);
+}
+
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
   };
 }
 
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
