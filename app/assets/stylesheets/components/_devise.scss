@@ -19,10 +19,10 @@
 }
 
 .no_border {
-  border-left: 0px solid #6d6467;
-  border: 0px solid #6d6467;
+  border-left: 0px solid #6d6467 !important;
+  border: 0px solid #6d6467 !important;
   padding-left: 0;
-  box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.075) !important;
   &:focus {
     box-shadow: none;
   }
