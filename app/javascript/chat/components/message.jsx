@@ -22,7 +22,7 @@ export function stringToColour(str) {
 const Message = (props) => {
   const time = new Date(props.message.created_at).toLocaleTimeString().slice(0,5);
   return (
-    <div className={document.cookie.slice(9) === props.message.author ? 'message-container message-right' : 'message-container message-left'}>
+    <div className={props.currentUser.author === props.message.author ? 'message-container message-right' : 'message-container message-left'}>
       <i style={{ color: stringToColour(props.message.author) }}>
         {props.message.author}
         <small>{time}</small>
@@ -31,6 +31,5 @@ const Message = (props) => {
     </div>
   );
 };
-
 
 export default Message;

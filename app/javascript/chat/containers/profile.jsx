@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { signOut } from '../actions';
+import { stringToColour } from '../components/message';
 
 
 class Profile extends Component {
@@ -25,18 +26,26 @@ class Profile extends Component {
 // onClick= {() => this.props.signOut()}>
 
   render(){
+  const image = this.props.currentUser.image ? (
+        <img className="messaging-logo" src={this.props.currentUser.image} alt="logo" />
+      ) : (
+        <div className="messaging-logo" style={{ backgroundColor: stringToColour(this.props.currentUser.author) }}>
+          <h2>{this.props.currentUser.author[0]}</h2>
+        </div>
+      );
+
   const profile = this.state.isToggleOn ? (
     <div>
       <div className="messaging-logo-container shadow">
-        <img className="messaging-logo" src={this.props.currentUser.image} alt="logo" />
+      {image}
       </div>
       <div className="log-out-container">
         <h6 className="rotate log-out slider" onClick= {this.handleClick}>Log out</h6>
       </div>
     </div>
     ) : (
-    <div className="messaging-logo-container shadow">
-      <img className="messaging-logo" src={this.props.currentUser.image} alt="logo" />
+    <div className="messaging-logo-container  shadow">
+      {image}
     </div>
     );
 

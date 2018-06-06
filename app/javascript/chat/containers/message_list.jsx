@@ -38,7 +38,7 @@ class MessageList extends Component {
 
         <div className="channel-content" ref={(list) => { this.list = list; }}>
           {this.props.messages.map(
-            message => <Message message={message} key={message.content} />)}
+            message => <Message message={message} currentUser={this.props.currentUser} key={message.content} />)}
         </div>
         <MessageForm channelFromParams={this.props.selectedChannel} />
       </div>
@@ -56,6 +56,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     messages: state.messages,
+    currentUser: state.currentUser
   };
 }
 

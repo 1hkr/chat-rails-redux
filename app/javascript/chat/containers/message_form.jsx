@@ -28,14 +28,20 @@ class MessageForm extends Component {
     return (
       <form className="channel-editor" onSubmit={this.handleSubmit}>
         <input ref={input => this.messageBox = input} type="text" value={this.state.value} onChange={this.handleChange} />
-        <button style={{ backgroundColor: stringToColour(document.cookie.slice(9)) }}>send</button>
+        <button style={{ backgroundColor: stringToColour(this.props.currentUser.author) }}>send</button>
       </form>
     );
   }
+}
+
+function mapStateToProps(state) {
+  return {
+    currentUser: state.currentUser,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ createMessage }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(MessageForm);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageForm);
