@@ -1,0 +1,52 @@
+.devise {
+  margin: 15vh 0;
+  padding: 60px;
+  border-radius: 20px;
+
+  h2 {
+    font-family: arial !important;
+    font-size: 62px !important;
+    color: rgba(239, 239, 239, 0.8);
+    text-shadow: 2px 3px 5px #FFF, 0px 0px 0 #5d5d5d, 1px 4px 6px white;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  label {
+    font-family: arial !important;
+    color: rgb(173, 172, 172);
+  }
+}
+
+.no_border {
+  border-left: 0px solid #6d6467;
+  border: 0px solid #6d6467;
+  padding-left: 0;
+  box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.075);
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.padding-form {
+  padding: 6px 25px !important;
+}
+
+.align-h {
+  display: flex;
+  flex-direction: row;
+}
+
+.align-v {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-blue {
+  color: #469AE0 !important;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
