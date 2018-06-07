@@ -8,6 +8,19 @@ class User < ApplicationRecord
 
   validates :author, uniqueness: true
 
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
+
+  # use this instead of email_changed? for rails >= 5.1
+  def will_save_change_to_email?
+    false
+  end
+
   attr_accessor :email, :password, :password_confirmation, :remember_me, :username
   # attr_accessible :title, :body
 end
