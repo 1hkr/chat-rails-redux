@@ -41,7 +41,7 @@ p 'Creating channels'
   messages = Message.create([{
     user_id: User.find_by_email("alex@douceur.com").id,
     channel_id: Channel.find_by_name("Main").id,
-    content: "Hey poulette!"
+    content: "Hey!"
   },
   {
     user_id: User.find_by_email("lolo@douceur.com").id,
