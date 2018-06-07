@@ -25,26 +25,26 @@ p 'Creating channels'
 
   p 'Creating users'
   users = User.create([{
-    email: "alex@douceur.com",
     author: "Alex",
+    email: 'alex@douceur.com',
     password: "douceur",
     image: "https://res.cloudinary.com/djw1qzpwq/image/upload/v1528100432/17796252_10210384567904359_2508723321482927051_n.jpg"
   },
   {
-    email: "lolo@douceur.com",
     author: "Lorène",
+    email: "lolo@douceur.com",
     password: "douceur"
   }])
   p users
 
   p 'Creating messages'
   messages = Message.create([{
-    user_id: User.find_by_email("alex@douceur.com").id,
+    user_id: User.find_by_author("Alex").id,
     channel_id: Channel.find_by_name("Main").id,
     content: "Hey!"
   },
   {
-    user_id: User.find_by_email("lolo@douceur.com").id,
+    user_id: User.find_by_email("Lorène").id,
     channel_id: Channel.find_by_name("Main").id,
     content: "Yow"
   }])
