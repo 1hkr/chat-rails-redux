@@ -6,7 +6,7 @@
 
     <%= simple_form_for(resource, html: {class: 'form-inline'}, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
-          <%= f.input :author, label: 'Username', placeholder: 'you@email.com', required: false, input_html: { class: 'no_border shadow padding-form' } %>
+          <%= f.input :author, label: 'Username', placeholder: "what's your name again?", required: false, input_html: { class: 'no_border shadow padding-form' } %>
           <%= f.input :password, placeholder: 'password', required: false, input_html: { class: 'no_border shadow padding-form' } %>
         </div>
 
