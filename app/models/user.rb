@@ -21,6 +21,6 @@ class User < ApplicationRecord
     false
   end
 
-  attr_accessor :email, :password, :password_confirmation, :remember_me, :username
+  attr_accessor :password, :password_confirmation, :remember_me, :username
   # attr_accessible :title, :body
 end
