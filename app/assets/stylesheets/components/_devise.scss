@@ -29,7 +29,18 @@
 }
 
 .padding-form {
-  padding: 6px 25px !important;
+  padding: 6px 12px !important;
+}
+
+.form-check-label {
+  margin-left: 12px;
+}
+
+.form-group {
+  width: 100%;
+  & > input {
+    width: 76% !important;
+  }
 }
 
 .align-h {
