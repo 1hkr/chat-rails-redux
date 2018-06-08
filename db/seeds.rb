@@ -37,15 +37,15 @@ p 'Creating channels'
   }])
   p users
 
-  p 'Creating messages'
-  messages = Message.create([{
-    user_id: User.find_by_email("alex@douceur.com").id,
-    channel_id: Channel.find_by_name("Main").id,
-    content: "Hey poulette!"
-  },
-  {
-    user_id: User.find_by_email("lolo@douceur.com").id,
-    channel_id: Channel.find_by_name("Main").id,
-    content: "Yow"
-  }])
-  p messages
+#   p 'Creating messages'
+#   messages = Message.create([{
+#     user_id: User.find_by_email("alex@douceur.com").id,
+#     channel_id: Channel.find_by_name("Main").id,
+#     content: "Hey poulette!"
+#   },
+#   {
+#     user_id: User.find_by_email("lolo@douceur.com").id,
+#     channel_id: Channel.find_by_name("Main").id,
+#     content: "Yow"
+#   }])
+#   p messages
