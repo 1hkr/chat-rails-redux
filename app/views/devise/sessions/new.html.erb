@@ -1,3 +1,4 @@
+<% if Time.now.hour < 19 && Time.now.hour > 6 %>
  <div class="container">
    <div class="col-xs-12 col-sm-6 col-lg-6 col-sm-offset-3">
 
@@ -29,35 +30,43 @@
       </div>
 
     </div>
+  </div>
 
-<!--     <div class="devise shadow-dark background-mid-grey">
+  <% else %>
 
-      <h2 class="inner-shadow-dark">Log in</h2>
+  <div class="container background-dark-grey">
+    <div class="col-xs-12 col-sm-6 col-lg-6 col-sm-offset-3">
+      <div class="devise shadow-dark background-mid-grey">
 
-      <%= simple_form_for(resource, html: {class: 'form-inline'}, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :author, label: 'Username:', placeholder: "what's your name again?", required: false, input_html: { class: 'no_border shadow padding-form background-mid-grey' } %>
-        <%= f.input :password, label: 'Password:', placeholder: '******', required: false, input_html: { class: 'no_border shadow padding-form background-mid-grey' } %>
+        <h2 class="inner-shadow-dark">Log in</h2>
+
+        <%= simple_form_for(resource, html: {class: 'form-inline'}, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :author, label: 'Username:', placeholder: "what's your name again?", required: false, input_html: { class: 'no_border padding-form background-mid-grey font-dark' } %>
+          <%= f.input :password, label: 'Password:', placeholder: '******', required: false, input_html: { class: 'no_border padding-form background-mid-grey font-dark' } %>
+        </div>
+
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <div class="align-h align-v" style="margin-top: 50px">
+          <div class="form-actions link-blue">
+            <%= f.button :submit, "Log in", class: 'background-mid-grey' %>
+          </div>
+
+          <% end %>
+
+          <div class="align-h align-v font-dark">
+            <p style="margin: 0"> or </p>
+          </div>
+
+          <div class="margin-left-10">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+
       </div>
-
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-      <div class="align-h align-v" style="margin-top: 50px">
-        <div class="form-actions link-blue">
-          <%= f.button :submit, "Log in", class: 'background-mid-grey' %>
-        </div>
-
-        <% end %>
-
-        <div class="align-h align-v font-dark">
-          <p style="margin: 0"> or </p>
-        </div>
-
-        <div class="margin-left-10">
-          <%= render "devise/shared/links" %>
-        </div>
-      </div>
-
     </div>
-  </div> -->
+  </div>
 </div>
+
+<% end %>
 

@@ -11,7 +11,6 @@
   h2 {
     font-family: arial !important;
     font-size: 62px !important;
-    color: rgba(239, 239, 239, 0.8);
     text-align: center;
     margin-bottom: 50px;
   }
@@ -24,6 +23,8 @@
 
 .inner-shadow-bright {
   text-shadow: 2px 3px 5px #FFF, 0px 0px 0 #5d5d5d, 1px 4px 6px white;
+  color: rgba(239, 239, 239, 0.8);
+
 }
 
 .no_border {
@@ -74,7 +75,8 @@
 
 // Dark mode
 .inner-shadow-dark {
-text-shadow: 2px 3px 5px #312f2f, 1px 2px 0 #060606, 1px 4px 6px #464646;
+text-shadow: 2px 3px 5px #423f3f, -2px -2px 0px #212020, 1px 4px 6px #3c3939;
+color: none;
 }
 
 .background-dark-grey {
