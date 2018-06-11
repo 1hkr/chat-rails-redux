@@ -25,10 +25,19 @@ class ChannelList extends Component {
     );
   }
 
+  isDark = () => {
+    if (this.props.time > 6 && this.props.time < 19) {
+      return "channels-container background-black hidden-xs"
+    } else {
+      return "channels-container channels-bright hidden-xs"
+    }
+  }
+
 
   render() {
+    console.log(this.props.time)
     return (
-      <div className="channels-container hidden-xs">
+      <div className={this.isDark()}>
         <ul>
           { this.props.channels.map(this.renderChannel)}
         </ul>
@@ -44,6 +53,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     channels: state.channels,
+    time: state.time
   };
 }
 

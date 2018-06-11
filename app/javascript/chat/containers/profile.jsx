@@ -23,6 +23,10 @@ class Profile extends Component {
     this.props.signOut()
   }
 
+  isDark = () => {
+    return(this.props.time > 6 && this.props.time < 19)
+  }
+
 // onClick= {() => this.props.signOut()}>
 
   render(){
@@ -36,7 +40,8 @@ class Profile extends Component {
 
   const profile = this.state.isToggleOn ? (
     <div>
-      <div className="messaging-logo-container shadow">
+      <div className={"messaging-logo-container " + (this.isDark ?
+        "background-mid-grey shadow-dark" : "shadow")}>
       {image}
       </div>
       <div className="log-out-container">
@@ -44,13 +49,15 @@ class Profile extends Component {
       </div>
     </div>
     ) : (
-    <div className="messaging-logo-container  shadow">
+    <div className={"messaging-logo-container " + (this.isDark ?
+        "background-mid-grey shadow-dark" : "shadow")}>
       {image}
     </div>
     );
 
     return (
-      <div className="logo-container hidden-xs">
+      <div className={ "logo-container hidden-xs " + (this.isDark ?
+              "background-dark-grey" : "background-white")}>
         <div onClick={this.handleChange}>
           {profile}
         </div>
@@ -66,6 +73,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
+    time: state.time
   };
 }
 

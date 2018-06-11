@@ -24,13 +24,19 @@ p {
 .logo-container {
   width: 70px;
   height: 100%;
-  background: #FFFFFF;
   box-sizing: border-box;
 }
 
-.messaging-logo-container {
+.buenise {
   height: 65px !important;
   width: 65px !important;
+  padding: 10px;
+}
+
+.messaging-logo-container {
+  width: 65px;
+  width: 65px;
+  padding: 10px;
 }
 
 .shadow {
@@ -41,7 +47,6 @@ p {
 .messaging-logo {
   width: 45px;
   height: 45px;
-  margin: 10px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -98,10 +103,13 @@ p {
   padding: 20px;
   width: 300px;
   height: 100vh;
-  background: #f4f4f4;
   box-sizing: border-box;
   box-shadow: 0px 0px 13px 0px #00000024;
   z-index: 2;
+}
+
+.channels-bright {
+  background-color: #f4f4f4;
 }
 
 .channels-container > span {
@@ -120,18 +128,30 @@ p {
 .channels-container > ul > li {
   margin: 10px 0;
   font-size: 14px;
-  color: #7c7c7c;
   cursor: pointer;
-}
-
-.channels-container > ul > li > a {
-  color: #7c7c7c;
 }
 
 .channels-container > ul > li> a.active {
   font-weight: 600;
-  color: black
 }
+
+// bright vs black
+.channels-bright > ul > li > a {
+  color: #7c7c7c;
+}
+
+.background-black > ul > li > a {
+  color: #ADACAC;
+}
+
+.channels-bright > ul > li > a.active {
+  color: black;
+}
+
+.background-black > ul > li > a.active {
+  color: white;
+}
+
 
 /* Column 3/3 *****************************************************************/
 

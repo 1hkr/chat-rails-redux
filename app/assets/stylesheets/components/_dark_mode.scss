@@ -1,0 +1,40 @@
+// general
+.shadow-dark {
+  box-shadow: -1px 1px 20px 11px #00000024;
+}
+
+.inner-shadow-dark {
+text-shadow: 2px 3px 5px #423f3f, -2px -2px 0px #212020, 1px 4px 6px #3c3939;
+color: none;
+}
+
+.background-black {
+  background-color: #141413
+}
+
+.background-dark-grey {
+  background-color: #272626;
+}
+
+.background-mid-grey {
+  background-color: #3E3E40;
+}
+
+.background-light-grey {
+  background-color: #666668;
+}
+
+.font-dark {
+  color: #ADACAC;
+}
+
+// devise
+
+
+.form-group-dark {
+  width: 100%;
+  & > input {
+    width: 76% !important;
+    border-radius: 0;
+  }
+}

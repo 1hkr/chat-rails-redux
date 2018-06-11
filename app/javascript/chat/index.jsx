@@ -15,11 +15,13 @@ const currentUser = JSON.parse(chatContainer.dataset.currentUser);
 const initialState = {
   messages: [],
   currentUser: currentUser,
+  time: Date().slice(16,18),
   channels: ["Main", "Berlin", "Lolex"]
 };
 
 const reducers = combineReducers({
   messages: messagesReducer,
+  time: identityReducer,
   currentUser: identityReducer,
   channels: (state = null, action) => state
 });
