@@ -22,12 +22,15 @@ export function stringToColour(str) {
 const Message = (props) => {
   const time = new Date(props.message.created_at).toLocaleTimeString().slice(0,5);
   return (
-    <div className={props.currentUser.author === props.message.author ? 'message-container message-right' : 'message-container message-left'}>
+    <div className={"message-container " +
+      (props.currentUser.author === props.message.author ? "message-right " : "message-left ") +
+      (props.isDark && "background-mid-grey shadow-dark")
+    }>
       <i style={{ color: stringToColour(props.message.author) }}>
         {props.message.author}
         <small>{time}</small>
       </i>
-      <p> {emojify(props.message.content) } </p>
+      <p className={props.isDark && "font-dark"}> {emojify(props.message.content) } </p>
     </div>
   );
 };

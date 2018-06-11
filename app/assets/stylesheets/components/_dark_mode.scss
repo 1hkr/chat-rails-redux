@@ -1,13 +1,28 @@
 // general
+
+//shadow
 .shadow-dark {
   box-shadow: -1px 1px 20px 11px #00000024;
 }
 
-.inner-shadow-dark {
-text-shadow: 2px 3px 5px #423f3f, -2px -2px 0px #212020, 1px 4px 6px #3c3939;
-color: none;
+.big-shadow-dark {
+  box-shadow: 1px 1px 23px 9px #00000024;
+  &:active {
+    box-shadow: 1px 1px 5px 4px #00000024;
+  }
 }
 
+.inner-shadow-dark {
+  text-shadow: 2px 3px 5px #423f3f, -2px -2px 0px #212020, 1px 4px 6px #3c3939;
+  color: none;
+}
+
+// borders
+.input-no-border {
+  border: 0;
+}
+
+// backgrounds
 .background-black {
   background-color: #141413
 }
@@ -24,13 +39,14 @@ color: none;
   background-color: #666668;
 }
 
+
+// font
 .font-dark {
   color: #ADACAC;
 }
 
+
 // devise
-
-
 .form-group-dark {
   width: 100%;
   & > input {

@@ -1,3 +1,20 @@
 .background-white {
   background: #FFFFFF;
 }
+
+.input-border {
+  border: 1px solid grey;
+  border-color: #d4d4d4;
+}
+
+.shadow {
+  box-shadow: -1px 1px 23px 0px #7b7b7b24;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.big-shadow {
+  box-shadow: 1px 1px 23px 9px #7b7b7b24;
+    &:active {
+      box-shadow: 1px 1px 5px 4px #7b7b7b24;
+    }
+}

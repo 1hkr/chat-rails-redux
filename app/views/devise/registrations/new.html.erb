@@ -10,10 +10,10 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :author, label: 'Username', required: true, autofocus: true, placeholder: 'Call me by your name', input_html: { class: 'no_border shadow padding-form' } %>
-      <%= f.input :email, label: 'Email', required: true, autofocus: true, placeholder: 'To send you your password if you lost it', input_html: { class: 'no_border shadow padding-form' } %>
-      <%= f.input :password, required: true, placeholder: '******',input_html: { class: 'no_border shadow padding-form' }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-      <%= f.input :password_confirmation, required: true, placeholder: '******', input_html: { class: 'no_border shadow padding-form' } %>
+      <%= f.input :author, label: 'Username', required: true, autofocus: true, placeholder: 'Call me by your name', input_html: { class: 'no-border shadow padding-form' } %>
+      <%= f.input :email, label: 'Email', required: true, autofocus: true, placeholder: 'To send you your password if you lost it', input_html: { class: 'no-border shadow padding-form' } %>
+      <%= f.input :password, required: true, placeholder: '******',input_html: { class: 'no-border shadow padding-form' }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+      <%= f.input :password_confirmation, required: true, placeholder: '******', input_html: { class: 'no-border shadow padding-form' } %>
     </div>
 
     <div class="align-h align-v" style="margin-top: 50px">
@@ -48,10 +48,10 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :author, label: 'Username', required: true, autofocus: true, placeholder: 'Call me by your name', input_html: { class: 'no_border padding-form background-mid-grey font-dark' } %>
-      <%= f.input :email, label: 'Email', required: true, autofocus: true, placeholder: 'To send you your password if you lost it', input_html: { class: 'no_border padding-form background-mid-grey font-dark' } %>
-      <%= f.input :password, required: true, placeholder: '******',input_html: { class: 'no_border padding-form background-mid-grey font-dark' }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-      <%= f.input :password_confirmation, required: true, placeholder: '******', input_html: { class: 'no_border padding-form background-mid-grey font-dark' } %>
+      <%= f.input :author, label: 'Username', required: true, autofocus: true, placeholder: 'Call me by your name', input_html: { class: 'no-border padding-form background-mid-grey font-dark' } %>
+      <%= f.input :email, label: 'Email', required: true, autofocus: true, placeholder: 'To send you your password if you lost it', input_html: { class: 'no-border padding-form background-mid-grey font-dark' } %>
+      <%= f.input :password, required: true, placeholder: '******',input_html: { class: 'no-border padding-form background-mid-grey font-dark' }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+      <%= f.input :password_confirmation, required: true, placeholder: '******', input_html: { class: 'no-border padding-form background-mid-grey font-dark' } %>
     </div>
 
     <div class="align-h align-v" style="margin-top: 50px">

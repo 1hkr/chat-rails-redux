@@ -26,7 +26,7 @@ p 'Creating channels'
   p 'Creating users'
   users = User.create([{
     email: "alex@douceur.com",
-    author: "Alex",
+    author: "Alexandre",
     password: "douceur",
     image: "https://res.cloudinary.com/djw1qzpwq/image/upload/v1528100432/17796252_10210384567904359_2508723321482927051_n.jpg"
   },

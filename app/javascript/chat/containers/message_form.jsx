@@ -19,16 +19,25 @@ class MessageForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.createMessage(this.props.channelFromParams, this.state.value);
-    this.setState({ value: '' }); // Reset message input
+    this.setState({ value: '' });
   }
 
-//
+  isDark = () => {
+    return(this.props.time > 6 && this.props.time < 19)
+  }
 
   render () {
     return (
       <form className="channel-editor" onSubmit={this.handleSubmit}>
-        <input ref={input => this.messageBox = input} type="text" value={this.state.value} onChange={this.handleChange} />
-        <button style={{ backgroundColor: stringToColour(this.props.currentUser.author) }}>send</button>
+        <input
+        ref={input => this.messageBox = input}
+        type="text" value={this.state.value}
+        onChange={this.handleChange}
+        className={this.isDark ?
+          "background-light-grey font-dark input-no-border shadow-dark" : "shadow"}/>
+        <button
+        className={this.isDark ? "big-shadow-dark" : "big-shadow"}
+        style={{ backgroundColor: stringToColour(this.props.currentUser.author) }}>send</button>
       </form>
     );
   }
@@ -37,6 +46,7 @@ class MessageForm extends Component {
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
+    time: state.time
   };
 }
 

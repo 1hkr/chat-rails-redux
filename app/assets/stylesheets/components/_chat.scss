@@ -34,14 +34,9 @@ p {
 }
 
 .messaging-logo-container {
-  width: 65px;
+  height: 62px;
   width: 65px;
   padding: 10px;
-}
-
-.shadow {
-  box-shadow: -1px 1px 23px 0px #7b7b7b24;
-  border-bottom: 1px solid #f4f4f4;
 }
 
 .messaging-logo {
@@ -167,8 +162,6 @@ p {
   padding-left: 28px;
   height: 70px;
   width: 100%;
-  border-bottom: 1px solid #f4f4f4;
-  box-shadow: -1px 1px 23px 0px #7b7b7b24;
   z-index: 1;
 }
 
@@ -219,6 +212,10 @@ p {
   margin: 5px 0 10px;
 }
 
+.background-mid-grey > i > small {
+  color: white;
+}
+
 .message-right {
   float: right;
   margin-left: 100%;
@@ -243,9 +240,6 @@ input[type="text"] {
   width: 100%;
   height: 100%;
   border-radius: 10px 0 0 10px;
-  border: 1px solid grey;
-  border-color: #d4d4d4;
-  box-shadow: -1px 1px 23px 0px #7b7b7b24;
   &:focus {
     outline: none;
   }
@@ -263,12 +257,8 @@ button {
   color: white;
   font-size: 14px;
   font-weight: 600;
-  box-shadow: 1px 1px 23px 9px #7b7b7b24;
   &:focus {
     outline: none;
-  }
-  &:active {
-    box-shadow: 1px 1px 5px 4px #7b7b7b24;
   }
 }
 
