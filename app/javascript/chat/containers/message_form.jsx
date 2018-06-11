@@ -23,7 +23,7 @@ class MessageForm extends Component {
   }
 
   isDark = () => {
-    return(this.props.time > 6 && this.props.time < 19)
+    return(this.props.time < 6 && this.props.time > 19)
   }
 
   render () {
@@ -33,10 +33,10 @@ class MessageForm extends Component {
         ref={input => this.messageBox = input}
         type="text" value={this.state.value}
         onChange={this.handleChange}
-        className={this.isDark ?
-          "background-light-grey font-dark input-no-border shadow-dark" : "shadow"}/>
+        className={this.isDark() ?
+          "background-light-grey font-dark input-no-border shadow-dark" : "input-border shadow"}/>
         <button
-        className={this.isDark ? "big-shadow-dark" : "big-shadow"}
+        className={this.isDark() ? "big-shadow-dark" : "big-shadow"}
         style={{ backgroundColor: stringToColour(this.props.currentUser.author) }}>send</button>
       </form>
     );

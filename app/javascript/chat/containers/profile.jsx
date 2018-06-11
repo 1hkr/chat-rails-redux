@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { signOut } from '../actions';
 import { stringToColour } from '../components/message';
@@ -24,12 +24,13 @@ class Profile extends Component {
   }
 
   isDark = () => {
-    return(this.props.time > 6 && this.props.time < 19)
+    return(this.props.time < 6 && this.props.time > 19)
   }
 
 // onClick= {() => this.props.signOut()}>
 
   render(){
+    console.log(this.isDark)
   const image = this.props.currentUser.image ? (
         <img className="messaging-logo" src={this.props.currentUser.image} alt="logo" />
       ) : (
@@ -40,8 +41,8 @@ class Profile extends Component {
 
   const profile = this.state.isToggleOn ? (
     <div>
-      <div className={"messaging-logo-container " + (this.isDark ?
-        "background-mid-grey shadow-dark" : "shadow")}>
+      <div className={"messaging-logo-container " + (this.isDark() ?
+        "background-mid-grey shadow-dark" : "background-white shadow")}>
       {image}
       </div>
       <div className="log-out-container">
@@ -49,14 +50,14 @@ class Profile extends Component {
       </div>
     </div>
     ) : (
-    <div className={"messaging-logo-container " + (this.isDark ?
-        "background-mid-grey shadow-dark" : "shadow")}>
+    <div className={"messaging-logo-container " + (this.isDark() ?
+        "background-mid-grey shadow-dark" : "background-white shadow")}>
       {image}
     </div>
     );
 
     return (
-      <div className={ "logo-container hidden-xs " + (this.isDark ?
+      <div className={ "logo-container hidden-xs " + (this.isDark() ?
               "background-dark-grey" : "background-white")}>
         <div onClick={this.handleChange}>
           {profile}

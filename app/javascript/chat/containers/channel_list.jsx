@@ -26,7 +26,7 @@ class ChannelList extends Component {
   }
 
   isDark = () => {
-    if (this.props.time > 6 && this.props.time < 19) {
+    if (this.props.time < 6 && this.props.time > 19) {
       return "channels-container background-black hidden-xs"
     } else {
       return "channels-container channels-bright hidden-xs"
