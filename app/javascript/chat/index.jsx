@@ -12,16 +12,21 @@ import identityReducer from './reducers/identity_reducer';
 
 const chatContainer = document.getElementById('chat_app');
 const currentUser = JSON.parse(chatContainer.dataset.currentUser);
+const time = Date().slice(16,18);
+console.log(time)
+const isDark = (time < 6 || time > 19);
 const initialState = {
   messages: [],
   currentUser: currentUser,
   time: Date().slice(16,18),
+  isDark: isDark,
   channels: ["Main", "Berlin", "Lolex"]
 };
 
 const reducers = combineReducers({
   messages: messagesReducer,
   time: identityReducer,
+  isDark: identityReducer,
   currentUser: identityReducer,
   channels: (state = null, action) => state
 });

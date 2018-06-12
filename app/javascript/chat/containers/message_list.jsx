@@ -26,15 +26,11 @@ class MessageList extends Component {
     this.props.fetchMessages(this.props.selectedChannel);
   }
 
-  isDark = () => {
-    return(this.props.time < 6 && this.props.time > 19)
-  }
-
   render() {
     return (
       console.log(this.props.messages),
-      <div className={"channel-container " + (this.isDark() && "background-dark-grey")}>
-        <div className={"channel-title " + (this.isDark() ?
+      <div className={"channel-container " + (this.props.isDark && "background-dark-grey")}>
+        <div className={"channel-title " + (this.props.isDark ?
           "background-mid-grey shadow-dark font-dark" : "shadow")}>
           <span>
             <h3>{this.props.selectedChannel}</h3>
@@ -46,7 +42,7 @@ class MessageList extends Component {
             message => <Message
             message={message}
             currentUser={this.props.currentUser}
-            isDark={this.isDark()}
+            isDark={this.props.isDark}
             key={message.content} />
             )}
         </div>
@@ -67,7 +63,7 @@ function mapStateToProps(state) {
   return {
     messages: state.messages,
     currentUser: state.currentUser,
-    time: state.time,
+    isDark: state.isDark
   };
 }
 

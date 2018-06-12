@@ -22,10 +22,6 @@ class MessageForm extends Component {
     this.setState({ value: '' });
   }
 
-  isDark = () => {
-    return(this.props.time < 6 && this.props.time > 19)
-  }
-
   render () {
     return (
       <form className="channel-editor" onSubmit={this.handleSubmit}>
@@ -33,10 +29,10 @@ class MessageForm extends Component {
         ref={input => this.messageBox = input}
         type="text" value={this.state.value}
         onChange={this.handleChange}
-        className={this.isDark() ?
+        className={this.props.isDark ?
           "background-light-grey font-dark input-no-border shadow-dark" : "input-border shadow"}/>
         <button
-        className={this.isDark() ? "big-shadow-dark" : "big-shadow"}
+        className={this.props.isDark ? "big-shadow-dark" : "big-shadow"}
         style={{ backgroundColor: stringToColour(this.props.currentUser.author) }}>send</button>
       </form>
     );
@@ -46,7 +42,7 @@ class MessageForm extends Component {
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
-    time: state.time
+    isDark: state.isDark
   };
 }
 
