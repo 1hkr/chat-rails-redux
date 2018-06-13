@@ -8,25 +8,25 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import App from './components/app';
 import messagesReducer from './reducers/messages_reducer';
+import darkReducer from './reducers/dark_reducer'
 import identityReducer from './reducers/identity_reducer';
 
 const chatContainer = document.getElementById('chat_app');
 const currentUser = JSON.parse(chatContainer.dataset.currentUser);
 const time = Date().slice(16,18);
-console.log(time)
 const isDark = (time < 6 || time > 19);
 const initialState = {
   messages: [],
   currentUser: currentUser,
   time: Date().slice(16,18),
-  isDark: isDark,
+  isDark: {isDark: isDark},
   channels: ["Main", "Berlin", "Lolex"]
 };
 
 const reducers = combineReducers({
   messages: messagesReducer,
   time: identityReducer,
-  isDark: identityReducer,
+  isDark: darkReducer,
   currentUser: identityReducer,
   channels: (state = null, action) => state
 });

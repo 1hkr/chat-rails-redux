@@ -23,10 +23,6 @@ class Profile extends Component {
     this.props.signOut()
   }
 
-  // isDark = () => {
-  //   return(this.props.time < 6 && this.props.time > 19)
-  // }
-
   render(){
   const image = this.props.currentUser.image ? (
         <img className="messaging-logo" src={this.props.currentUser.image} alt="logo" />
@@ -71,7 +67,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
-    isDark: state.isDark
+    isDark: state.isDark.isDark
   };
 }
 

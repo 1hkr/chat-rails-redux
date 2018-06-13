@@ -1,5 +1,13 @@
 // Actions
 
+// Dark
+export function switchLight() {
+  return {
+    type: 'SWITCH_LIGHT'
+  }
+}
+
+
 // actions to receive messages
 export function fetchMessages(channel) {
   const promise = fetch(`/api/v1/channels/${channel}/messages`, { credentials: "same-origin" })

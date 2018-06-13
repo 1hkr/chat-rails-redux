@@ -57,6 +57,12 @@ p {
   }
 }
 
+.pointer {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .log-out-container {
   background-color: 'white';
   width: '100%';
@@ -159,14 +165,16 @@ p {
 }
 
 .channel-title {
-  padding-left: 28px;
+  padding: 0 28px;
   height: 70px;
   width: 100%;
   z-index: 1;
 }
 
-.channel-title > span {
+.channel-title > div {
   font-weight: 600;
+  display: flex;
+  justify-content: space-between;
 }
 
 .channel-content {

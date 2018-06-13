@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchMessages } from '../actions';
+import { fetchMessages, switchLight } from '../actions';
 import Message from '../components/message';
 import MessageForm from './message_form';
 
@@ -26,15 +26,24 @@ class MessageList extends Component {
     this.props.fetchMessages(this.props.selectedChannel);
   }
 
+  handleClick = () => {
+    this.props.switchLight()
+    this.forceUpdate()
+  }
+
   render() {
     return (
-      console.log(this.props.messages),
       <div className={"channel-container " + (this.props.isDark && "background-dark-grey")}>
         <div className={"channel-title " + (this.props.isDark ?
           "background-mid-grey shadow-dark font-dark" : "shadow")}>
-          <span>
+          <div className="titles">
             <h3>{this.props.selectedChannel}</h3>
-          </span>
+            <h3
+              onClick={this.handleClick}
+              className="pointer">
+              {this.props.isDark ? 'Light' : 'Night'}
+            </h3>
+          </div>
         </div>
 
         <div className="channel-content" ref={(list) => { this.list = list; }}>
@@ -54,7 +63,7 @@ class MessageList extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { fetchMessages },
+    { fetchMessages, switchLight },
     dispatch
   );
 }
@@ -63,7 +72,7 @@ function mapStateToProps(state) {
   return {
     messages: state.messages,
     currentUser: state.currentUser,
-    isDark: state.isDark
+    isDark: state.isDark.isDark
   };
 }
 

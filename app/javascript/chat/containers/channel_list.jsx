@@ -26,7 +26,6 @@ class ChannelList extends Component {
   }
 
   render() {
-    console.log(this.props.time)
     return (
       <div className={"channels-container hidden-xs " + (this.props.isDark ?
         "background-black" : "channels-bright") }>
@@ -45,7 +44,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     channels: state.channels,
-    isDark: state.isDark
+    isDark: state.isDark.isDark
   };
 }
 

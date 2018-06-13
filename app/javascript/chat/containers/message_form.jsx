@@ -42,7 +42,7 @@ class MessageForm extends Component {
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
-    isDark: state.isDark
+    isDark: state.isDark.isDark
   };
 }
 
