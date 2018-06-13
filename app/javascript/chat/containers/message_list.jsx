@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchMessages, switchLight } from '../actions';
 import Message from '../components/message';
 import MessageForm from './message_form';
+import FontAwesome from 'react-fontawesome';
 
 class MessageList extends Component {
   componentWillMount() {
@@ -41,7 +42,7 @@ class MessageList extends Component {
             <h3
               onClick={this.handleClick}
               className="pointer">
-              {this.props.isDark ? 'Light' : 'Night'}
+              {this.props.isDark ? <FontAwesome name='fas fa-sun' /> : <FontAwesome name='far fa-moon' />}
             </h3>
           </div>
         </div>
